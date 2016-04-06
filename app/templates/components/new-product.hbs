@@ -1,1 +1,25 @@
-{{yield}}
+{{#if addNewProduct}}
+  <div id="productForm">
+    <form>
+      <div class="form-group">
+        <label for="title">Product title</label>
+        {{input value=title id="title"}}
+      </div>
+      <div class="form-group">
+        <label for="cost">Product cost</label>
+        {{input value=cost id="cost"}}
+      </div>
+      <div class="form-group">
+        <label for="description">Product description</label>
+        {{input value=description id="description"}}
+      </div>
+      <div class="form-group">
+        <label for="image">Product image</label>
+        {{input value=image id="image"}}
+      </div>
+      <button {{action 'saveProduct1'}}>Save</button>
+    </form>
+  </div>
+{{else}}
+    <button {{action 'productFormShow'}}>Add Product</button>
+{{/if}}
